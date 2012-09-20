@@ -1,4 +1,5 @@
-pyintro
-=======
+Introduction to Python
+======================
 
-Noisebridge class
+Noisebridge
+-----------
