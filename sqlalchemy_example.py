@@ -1,42 +1,42 @@
 """
-
-SQLAlchemy
-
-requires: sqlalchemy, psycopg2
-sql, postgres, sqlite
-connecting to the DB and DSNs
-Django framework tightly integrated with its ORM
-
-Modules
-Install postgres: sudo apt_get install postgres
-Install psycopg2: sudo easy_install sqlalchemy
-    -wrapper around postgres for sqlalchemy
-
-IRC (freenode)
-#noisebridge
-#plone
-eleddy
-
-"""
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-form sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
+"""
+import csv
 
-engine = create_engine('postgresql://localhost/pyclass1', echo=True)
-Base = declarative()
+"""
+engine = create_engine('postgresql://localhost/mytestdb', echo=True)
+Base = declarative_base()
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
+"""
 
+"""
 class Movie(Base):
-__tablename__ = 'movies'
+    __tablename__ = 'movies'
+"""
+
 
 def add_stuff():
-pass
+    pass
+
 
 def get_stuff():
-pass
+    pass
+
+
+def get_csv():
+    with open('crime.csv', 'rb') as csvfile:
+        csvreader = csv.DictReader(csvfile)
+        for row in csvreader:
+            print row
+
 
 if __name__ == '__main__':
-add_stuff()
-get_stuff()
+	pass
+
+
+get_csv()
+#add_stuff()
+#get_stuff()
